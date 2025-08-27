@@ -72,7 +72,7 @@ a.brand:focus-visible {
   border-radius: .35rem;
 }
 
-/* Primary nav links */
+/* Primary nav links (desktop baseline) */
 .navlinks { display: flex; align-items: center; gap: .75rem; }
 .navlinks a {
   color: var(--link);
@@ -147,9 +147,9 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 footer .links a { color: var(--muted); text-decoration: none; margin-right: .75rem; }
 footer .links a:hover { text-decoration: underline; }
 
-/* -------- Polished Mobile Navigation (CSS-only) -------- */
+/* -------- Polished Mobile Navigation (CSS-only, OVERLAY) -------- */
 
-/* Hide default marker and style summary as button */
+/* Remove default marker and style summary as button */
 .nav-collapse > summary {
   list-style: none;
   cursor: pointer;
@@ -174,27 +174,33 @@ footer .links a:hover { text-decoration: underline; }
 .hamburger-bar::before { top: -6px; }
 .hamburger-bar::after  { top: 6px; }
 
-/* Mobile drawer */
+/* Mobile overlay drawer (does not increase header height) */
 @media (max-width: 768px) {
-  .navbar { flex-wrap: wrap; align-items: flex-start; }
+  .navbar { flex-wrap: nowrap; align-items: center; }
 
-  /* Make the <details> span the whole row, keep the button on the right */
-  .nav-collapse { width: 100%; }           /* ⬅️ full width container */
-  .nav-collapse > summary { margin-left: auto; } /* ⬅️ push Menu to right */
-  
+  /* right-aligned button, overlay anchored to this <details> */
+  .nav-collapse { position: relative; margin-left: auto; }
+  .nav-collapse > summary { margin-left: 0; }
+
   .navlinks {
+    position: absolute;
+    right: .75rem;                 /* distance from wrapper’s right edge */
+    top: calc(100% + .5rem);       /* just below the button */
     display: block;
-    width: 100%;
-    margin-top: .6rem;
+    width: min(92vw, 360px);
     padding: .5rem;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: .9rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,.16); /* subtle depth */
+    box-shadow: 0 12px 32px rgba(0,0,0,.22);
+    z-index: 1000;
   }
+  .nav-collapse:not([open]) .navlinks { display: none; } /* hidden when closed */
+
   .navlinks a { display: block; padding: .65rem .75rem; }
   .navlinks a + a { margin-top: .25rem; }
-  .nav-collapse:not([open]) .navlinks { display: none; }
+
+  /* thumb-friendly targets */
   .btn, .nav-collapse > summary, .navlinks a { min-height: 44px; }
 }
 
