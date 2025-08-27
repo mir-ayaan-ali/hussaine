@@ -14,29 +14,26 @@
   <div class="wrapper navbar">
     <a class="brand" href="{{ '/' | relative_url }}">Ayaan</a>
 
-    <!-- CSS-only mobile nav -->
-    <details class="nav-collapse">
-      <summary class="hamburger" aria-label="Toggle navigation">
-        <span class="hamburger-box" aria-hidden="true">
-          <span class="hamburger-bar"></span>
-        </span>
-        Menu
-      </summary>
+<details class="nav-collapse">
+  <summary class="hamburger" aria-label="Toggle navigation">
+    <span class="hamburger-box"><span class="hamburger-bar"></span></span>
+    Menu
+  </summary>
+  <nav class="navlinks" aria-label="Primary">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <a href="{{ '/alpha/' | relative_url }}">Alpha</a>
+    <a href="{{ '/bravo/' | relative_url }}">Bravo</a>
+    <a href="{{ '/charlie/' | relative_url }}">Charlie</a>
+    <a href="{{ '/delta/' | relative_url }}">Delta</a>
+    <a href="{{ '/search/' | relative_url }}">Search</a>
+    {% include dark_toggle.html %}  <!-- mobile toggle (inside drawer) -->
+  </nav>
+</details>
 
-      <nav class="navlinks" aria-label="Primary">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/alpha/' | relative_url }}">Alpha</a>
-        <a href="{{ '/bravo/' | relative_url }}">Bravo</a>
-        <a href="{{ '/charlie/' | relative_url }}">Charlie</a>
-        <a href="{{ '/delta/' | relative_url }}">Delta</a>
-        <a href="{{ '/search/' | relative_url }}">Search</a>
-        {% include dark_toggle.html %}
-      </nav>
-    </details>
-    <!-- Desktop-only theme toggle (mobile keeps the one inside the drawer) -->
 <div class="theme-desktop">
-  {% include dark_toggle.html %}
+  {% include dark_toggle.html %}     <!-- desktop toggle (always visible) -->
 </div>
+
 
   </div>
 </header>
