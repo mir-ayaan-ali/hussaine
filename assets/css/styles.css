@@ -261,3 +261,19 @@ footer .links a:hover { text-decoration: underline; }
 
 .cta-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; }
 @media (max-width: 480px) { .cta-row .btn { flex: 1 1 calc(50% - .6rem); text-align: center; } }
+
+/* Desktop-only theme toggle container */
+.theme-desktop { display: none; }
+
+/* Desktop: only show the desktop toggle; hide links & the drawer toggle */
+@media (min-width: 769px) {
+  .theme-desktop { display: inline-flex; }        /* show the outer toggle */
+  .navlinks .theme-toggle { display: none; }      /* hide the inner (drawer) toggle */
+  .nav-collapse > summary { display: none; }      /* hide "Menu" button on desktop */
+  .navlinks a { display: none; }                  /* hide nav links on desktop */
+}
+
+/* Mobile: hide the desktop toggle (we use the one in the drawer) */
+@media (max-width: 768px) {
+  .theme-desktop { display: none; }
+}
