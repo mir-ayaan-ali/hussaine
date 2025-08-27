@@ -97,6 +97,15 @@ a.brand:focus-visible {
 .btn.outline { background: transparent; color: var(--fg); border: 1px solid var(--border); }
 .btn:hover { filter: brightness(0.95); }
 
+/* Hover highlight for outline buttons (turns green on hover) */
+.btn.outline:hover,
+.btn.outline:focus-visible {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  filter: none; /* override the generic .btn:hover brightness */
+}
+
 /* Hero */
 .hero { padding: 3rem 0 1rem; }
 .hero h1 {
