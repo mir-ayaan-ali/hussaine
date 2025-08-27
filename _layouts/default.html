@@ -12,30 +12,27 @@
 <body>
   <header class="site-header">
   <div class="wrapper navbar">
-    <div class="brand">
-      <a href="{{ '/' | relative_url }}" style="text-decoration:none;color:inherit">Ayaan</a>
-    </div>
+    <a class="brand" href="{{ '/' | relative_url }}">Ayaan</a>
 
-    <!-- Mobile menu button -->
-    <button id="nav-toggle"
-            class="hamburger"
-            aria-label="Toggle navigation"
-            aria-controls="primary-nav"
-            aria-expanded="false">
-      <span class="hamburger-box"><span class="hamburger-bar"></span></span>
-      Menu
-    </button>
+    <!-- CSS-only mobile nav -->
+    <details class="nav-collapse">
+      <summary class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-box" aria-hidden="true">
+          <span class="hamburger-bar"></span>
+        </span>
+        Menu
+      </summary>
 
-    <!-- Primary nav -->
-    <nav id="primary-nav" class="navlinks is-collapsed" aria-label="Primary">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/alpha/' | relative_url }}">Alpha</a>
-      <a href="{{ '/bravo/' | relative_url }}">Bravo</a>
-      <a href="{{ '/charlie/' | relative_url }}">Charlie</a>
-      <a href="{{ '/delta/' | relative_url }}">Delta</a>
-      <a href="{{ '/search/' | relative_url }}">Search</a>
-      {% include dark_toggle.html %}
-    </nav>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/alpha/' | relative_url }}">Alpha</a>
+        <a href="{{ '/bravo/' | relative_url }}">Bravo</a>
+        <a href="{{ '/charlie/' | relative_url }}">Charlie</a>
+        <a href="{{ '/delta/' | relative_url }}">Delta</a>
+        <a href="{{ '/search/' | relative_url }}">Search</a>
+        {% include dark_toggle.html %}
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -56,17 +53,5 @@
       <p style="margin-top:.5rem;">© 2025 Ayaan</p>
     </div>
   </footer>
-  <script>
-(function () {
-  const btn = document.getElementById('nav-toggle');
-  const nav = document.getElementById('primary-nav');
-  function set(open) {
-    nav.classList.toggle('is-open', open);
-    nav.classList.toggle('is-collapsed', !open);
-    btn.setAttribute('aria-expanded', String(open));
-  }
-  btn.addEventListener('click', () => set(!nav.classList.contains('is-open')));
-})();
-</script>
 </body>
 </html>
