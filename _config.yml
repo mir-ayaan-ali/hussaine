@@ -1,0 +1,29 @@
+title: "Ayaan"
+description: "Study materials of projects — clean & minimal."
+url: "https://mir-ayaan-ali.github.io"
+baseurl: "/hussaine"
+author: "Ayaan"
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+excerpt_separator: "<!--more-->"
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      read_time: 4
+      image: /assets/favicon.svg
+      tags: []
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+theme: null
+exclude:
+  - Gemfile
+  - Gemfile.lock
