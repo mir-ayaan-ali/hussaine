@@ -176,7 +176,12 @@ footer .links a:hover { text-decoration: underline; }
 
 /* Mobile drawer */
 @media (max-width: 768px) {
-  .navbar { flex-wrap: wrap; }
+  .navbar { flex-wrap: wrap; align-items: flex-start; }
+
+  /* Make the <details> span the whole row, keep the button on the right */
+  .nav-collapse { width: 100%; }           /* ⬅️ full width container */
+  .nav-collapse > summary { margin-left: auto; } /* ⬅️ push Menu to right */
+  
   .navlinks {
     display: block;
     width: 100%;
@@ -185,11 +190,11 @@ footer .links a:hover { text-decoration: underline; }
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: .9rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16); /* subtle depth */
   }
   .navlinks a { display: block; padding: .65rem .75rem; }
   .navlinks a + a { margin-top: .25rem; }
-  .nav-collapse:not([open]) .navlinks { display: none; } /* hide when closed */
-  /* touch-friendly */
+  .nav-collapse:not([open]) .navlinks { display: none; }
   .btn, .nav-collapse > summary, .navlinks a { min-height: 44px; }
 }
 
