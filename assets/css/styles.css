@@ -189,3 +189,7 @@ footer .links a:hover { text-decoration: underline; }
   .nav-collapse > summary { display:none; }
   .navlinks { display:flex !important; background:transparent; border:none; padding:0; }
 }
+
+/* Brand spacing (subtle push from the left edge) */
+.brand { margin-left: .6rem; }
+@media (min-width: 769px) { .brand { margin-left: .4rem; } }
