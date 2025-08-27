@@ -277,3 +277,16 @@ footer .links a:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   .theme-desktop { display: none; }
 }
+
+/* Make SVGs inherit color; brighten sun in dark mode */
+.theme-toggle .icon-moon,
+.theme-toggle .icon-sun { color: var(--fg); }   /* default color */
+
+.theme-toggle.is-dark .icon-sun { color: #FFD84D; } /* vivid yellow sun */
+
+/* Subtle hover background for contrast */
+.theme-toggle:hover { background: var(--card); }
+
+/* Slightly stronger ring in dark mode for visibility */
+[data-theme="dark"] .theme-toggle { border-color: #3a3a3a; }
+
