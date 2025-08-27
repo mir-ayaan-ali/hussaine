@@ -141,3 +141,31 @@ hr.sep { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .badge { background: var(--accent); color: white; border-radius: .4rem; padding: .1rem .5rem; font-size: .75rem; }
 footer .links a { color: var(--muted); text-decoration: none; margin-right: .75rem; }
 footer .links a:hover { text-decoration: underline; }
+/* --- Mobile Nav (hamburger) --- */
+.navlinks { display: flex; align-items: center; gap: 0.75rem; }
+.hamburger { display: none; align-items: center; gap: .5rem; padding: .5rem .75rem;
+  border: 1px solid var(--border); background: transparent; border-radius: .6rem; cursor: pointer; }
+.hamburger-box { width: 20px; height: 14px; position: relative; }
+.hamburger-bar, .hamburger-bar::before, .hamburger-bar::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 2px; background: var(--fg); border-radius: 2px;
+}
+.hamburger-bar { top: 6px; }
+.hamburger-bar::before { top: -6px; }
+.hamburger-bar::after  { top: 6px; }
+
+/* Small screens: collapse nav to a drawer */
+@media (max-width: 768px) {
+  .navbar { flex-wrap: wrap; }
+  .hamburger { display: inline-flex; }
+  .navlinks { width: 100%; display: grid; grid-auto-rows: minmax(0, auto); gap: .5rem; padding-top: .5rem;
+              transition: max-height 200ms ease; }
+  .navlinks.is-collapsed { max-height: 0; overflow: hidden; padding-top: 0; }
+  .navlinks.is-open { max-height: 400px; } /* tall enough to show all links */
+  .navlinks a { display: block; padding: .5rem .25rem; }
+  .btn { min-height: 44px; } /* thumb-friendly */
+}
+
+/* Desktop: always visible, no toggle */
+@media (min-width: 769px) {
+  .navlinks { max-height: none !important; padding-top: 0 !important; }
+}
