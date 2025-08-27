@@ -213,12 +213,23 @@ footer .links a:hover { text-decoration: underline; }
   .btn, .nav-collapse > summary, .navlinks a { min-height: 44px; }
 }
 
-/* Desktop: inline nav, no “Menu” button */
+/* Desktop: show ONLY the theme toggle on the right */
 @media (min-width: 769px) {
-  .nav-collapse > summary { display: none; }
-  .navlinks { display: flex !important; background: transparent; border: none; padding: 0; }
-  a.brand { margin-left: .5rem; }  /* slightly less offset on wide screens */
+  .nav-collapse > summary { display: none; } /* hide the “Menu” button on desktop */
+
+  /* nav container stays, but only the theme toggle is visible */
+  .navlinks {
+    display: flex !important;
+    align-items: center;
+    gap: .5rem;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .navlinks a { display: none; }          /* hide Home/Alpha/Bravo/Charlie/Delta/Search */
+  /* theme toggle stays visible (it’s a button, not an <a>) */
 }
+
 
 /* -------- Theme toggle (icon-only) -------- */
 .theme-toggle {
