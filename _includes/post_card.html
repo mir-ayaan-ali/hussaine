@@ -1,0 +1,16 @@
+{% assign url = post.url | relative_url %}
+<div class="card">
+  <div class="kicker">
+    {% if post.categories and post.categories.size > 0 %}{{ post.categories[0] | capitalize }}{% endif %}
+  </div>
+  <h3><a href="{{ url }}" style="text-decoration:none;color:inherit">{{ post.title }}</a></h3>
+  <div class="meta">
+    {% assign author_key = post.author | default: "" %}
+    {% if site.data.authors[author_key] %}
+      By {{ site.data.authors[author_key].name }}
+    {% endif %}
+    • {{ post.date | date: "%b %d, %Y" }} • {{ post.read_time | default: 4 }} min read
+  </div>
+  <p>{{ post.summary | default: post.excerpt | strip_html | truncatewords: 30 }}</p>
+  <a class="btn" href="{{ url }}">Expand</a>
+</div>

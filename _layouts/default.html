@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  {%- seo -%}
+  <link href="{{ '/assets/css/styles.css' | relative_url }}" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper navbar">
+      <div class="brand"><a href="{{ '/' | relative_url }}" style="text-decoration:none;color:inherit">Ayaan</a></div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/alpha/' | relative_url }}">Alpha</a>
+        <a href="{{ '/bravo/' | relative_url }}">Bravo</a>
+        <a href="{{ '/charlie/' | relative_url }}">Charlie</a>
+        <a href="{{ '/delta/' | relative_url }}">Delta</a>
+        <a href="{{ '/search/' | relative_url }}">Search</a>
+        {% include dark_toggle.html %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <div class="links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/alpha/' | relative_url }}">Alpha</a>
+        <a href="{{ '/bravo/' | relative_url }}">Bravo</a>
+        <a href="{{ '/charlie/' | relative_url }}">Charlie</a>
+        <a href="{{ '/delta/' | relative_url }}">Delta</a>
+        <a href="{{ '/search/' | relative_url }}">Search</a>
+      </div>
+      <p style="margin-top:.5rem;">© 2025 Ayaan</p>
+    </div>
+  </footer>
+</body>
+</html>

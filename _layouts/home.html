@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section class="hero">
+  <h1>{{ site.title }}</h1>
+  <p>Study materials of projects — curated by multiple authors. Clean &amp; minimal.</p>
+  <p style="margin-top:1rem;">
+    <a class="btn" href="#featured">Expand</a>
+    <a class="btn outline" href="{{ '/search/' | relative_url }}">Search</a>
+  </p>
+</section>
+
+<hr class="sep"/>
+
+<section id="featured">
+  <h2 style="font-family:Georgia,serif;">Featured</h2>
+  <div class="grid">
+    {%- assign featured = site.posts | where: "featured", true -%}
+    {%- if featured and featured != empty -%}
+      {%- for post in featured limit:8 -%}
+        {%- include post_card.html post=post -%}
+      {%- endfor -%}
+    {%- else -%}
+      {%- for post in site.posts limit:8 -%}
+        {%- include post_card.html post=post -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</section>

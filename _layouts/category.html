@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1 class="category-title">{{ page.title }}</h1>
+<div class="grid">
+  {% assign cat = page.category | downcase %}
+  {% assign list = site.posts | where_exp: "p", "p.categories contains cat" %}
+  {% if list and list != empty %}
+    {% for post in list %}
+      {% include post_card.html post=post %}
+    {% endfor %}
+  {% else %}
+    <p>No posts yet. Create one in <code>_posts/</code> with <code>categories: [{{ page.category | downcase }}]</code>.</p>
+  {% endif %}
+</div>
