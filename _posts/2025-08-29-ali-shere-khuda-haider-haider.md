@@ -1,6 +1,6 @@
 ---
 title: "Ali shere khuda haider haider"
-date: 2025-08-28
+date: 2025-08-29
 categories: [manqabat]
 author: mir_hassan_mir
 featured: true
