@@ -226,7 +226,7 @@ footer .links a:hover { text-decoration: underline; }
     border: none;
     padding: 0;
   }
-  .navlinks a { display: none; }          /* hide Home/Alpha/Bravo/Charlie/Delta/Search */
+  .navlinks a { display: none; }          /* hide Home/Nohas/Bravo/Charlie/Delta/Search */
   /* theme toggle stays visible (it’s a button, not an <a>) */
 }
 
