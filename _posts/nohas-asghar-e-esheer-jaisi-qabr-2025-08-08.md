@@ -10,8 +10,7 @@ Haay Abbas (4)
 
 Haay mera Abbas(4)
 
-Ro rahi hai soch kar(2) ummul banee yeh aaj bhi(2)
-"
+Ro rahi hai soch kar(2) ummul banee yeh aaj bhi(2)"
 ---
 Asghar e besheer jaisi qabr
 
