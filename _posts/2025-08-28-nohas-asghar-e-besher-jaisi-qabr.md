@@ -2,7 +2,7 @@
 title: "Asghar e besheer jaisi qabr"
 date: 2025-08-28
 categories: [nohas]
-author: Nadeem Sarwar
+author: nadeem_sarwar
 featured: true
 summary: "Asghar e besheer jaisi qabr
 
