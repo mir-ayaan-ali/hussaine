@@ -12,7 +12,18 @@
 <body>
   <header class="site-header">
   <div class="wrapper navbar">
-    <a class="brand" href="{{ '/' | relative_url }}">Hussaine</a>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Ayaan home">
+  <img
+    src="{{ '/assets/Logo_Black.png' | relative_url }}"
+    alt="Ayaan"
+    class="logo logo-light"
+    width="140" height="36" decoding="async" />
+  <img
+    src="{{ '/assets/Logo_White.png'  | relative_url }}"
+    alt=""
+    class="logo logo-dark"
+    width="140" height="36" decoding="async" aria-hidden="true" />
+</a>
 
 <details class="nav-collapse">
   <summary class="hamburger" aria-label="Toggle navigation">
