@@ -1,6 +1,6 @@
 ---
 title: "Jibrael Murtaza ko Dulha"
-date: 2025-08-08
+date: 2025-08-31
 categories: [manqubat]
 author: mir_hassan_mir
 featured: true
