@@ -290,3 +290,15 @@ footer .links a:hover { text-decoration: underline; }
 /* Slightly stronger ring in dark mode for visibility */
 [data-theme="dark"] .theme-toggle { border-color: #3a3a3a; }
 
+/* Image logo styles */
+a.brand { display: inline-flex; align-items: center; gap: .4rem; }
+a.brand .logo { display: block; height: 28px; width: auto; }
+
+/* Show light logo by default, dark logo in dark theme */
+a.brand .logo-dark { display: none; }
+[data-theme="dark"] a.brand .logo-light { display: none; }
+[data-theme="dark"] a.brand .logo-dark  { display: block; }
+
+/* Keep link-appearance neutral for the logo */
+a.brand { color: var(--fg); text-decoration: none; }
+a.brand:hover { text-decoration: none; }
