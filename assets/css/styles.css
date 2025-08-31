@@ -292,7 +292,7 @@ footer .links a:hover { text-decoration: underline; }
 
 /* Image logo styles */
 a.brand { display: inline-flex; align-items: center; gap: .4rem; }
-a.brand .logo { display: block; height: 42px; width: auto; }
+a.brand .logo { display: block; height: 92px; width: auto; }
 
 /* Show light logo by default, dark logo in dark theme */
 a.brand .logo-dark { display: none; }
